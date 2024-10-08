@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Video</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #000; /* Set background color to black */
+        }
+        iframe {
+            border: none;
+        }
+    </style>
+</head>
+<body>
+
+    <iframe id="videoFrame" width="560" height="315" 
+    frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; 
+    picture-in-picture; web-share" allowfullscreen></iframe>
+
+    <script>
+        // Array of video URLs with autoplay, controls disabled, and muted
+        const videoUrls = [
+            "https://www.youtube.com/embed/DhnhmqExsss?autoplay=1&controls=0",
+            "https://www.youtube.com/embed/lohz1nW-5tQ?autoplay=1&controls=0",
+            "https://www.youtube.com/embed/iHOw9Fcs_vM?autoplay=1&controls=0",
+            "https://www.youtube.com/embed/lqOyc4b9p_0?autoplay=1&controls=0",
+            "https://www.youtube.com/embed/qc86wVfMPrQ?autoplay=1&controls=0",
+            "https://www.youtube.com/embed/lfZwxfKbDbw?autoplay=1&controls=0"
+        ];
+
+        // Function to randomly select a video URL
+        const randomVideoUrl = videoUrls[Math.floor(Math.random() * videoUrls.length)];
+
+        // Set the src attribute of the iframe to the random video URL
+        document.getElementById('videoFrame').src = randomVideoUrl;
+    </script>
+
+</body>
+</html>
